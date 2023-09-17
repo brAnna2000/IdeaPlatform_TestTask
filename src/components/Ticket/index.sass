@@ -1,0 +1,86 @@
+@mixin grey-small-el
+    color: #a9b0b3
+    font-size: 14px
+    
+.ticketCard
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 5%
+    gap: 15px
+    img
+        width: 200px
+    .mobileLogo
+        width: 50px
+        display: none
+    & > div:first-of-type
+        display: flex
+        flex-direction: column
+    & > div:last-of-type
+        display: flex
+        flex-direction: row
+        gap: 30px
+
+.ticketCard .MuiBox-root:first-of-type
+    gap: 10%
+
+.ticketInfo
+    display: flex
+    flex-direction: column
+    gap: 5px
+    p:last-of-type
+        @include grey-small-el
+    
+.ticketTime
+    font-size: 35px
+
+.ticketStops
+    @include grey-small-el
+    border-bottom: 1px solid #a9a9a9
+    align-self: flex-start
+    padding: 5px
+    width: 100%
+    text-align: center
+
+.ticketButton
+    background-color: #ff6d00
+    color: #ffffff
+    border: none
+    height: 50px
+    border-radius: 5px
+    &:hover
+        transition: 0.5s
+        background-color: #ff8124
+
+
+@media screen and (max-width: 960px)
+    .ticketCard
+        flex-direction: column
+        & > div:first-of-type
+            flex-direction: row
+            justify-content: space-between
+        & > div:last-of-type
+            justify-content: space-between
+
+    .ticketButton
+        height: 100%
+        padding: 0 10px
+    
+    .ticketTime
+        font-size: 30px
+    
+    .ticketStops
+        width: auto
+
+@media screen and (max-width: 640px)
+    .ticketCard
+        .mobileLogo
+            display: inline
+        .desktopLogo
+            display: none
+        & > div:last-of-type
+            flex-direction: column
+    .ticketTime
+        font-size: 24px
+    .ticketStops
+        align-self: auto
